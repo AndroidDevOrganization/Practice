@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,5 +51,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clickHandler(View source) {
+        // Get the TextView named R.id.show
+        TextView tv = (TextView) findViewById(R.id.show);
+        // Set new message into the TextView
+        tv.setText("Hello Android - " + new java.util.Date());
+    }
+
+    public void clickCancel(View view) {
+        TextView tv = (TextView) findViewById(R.id.show);
+        tv.setText(R.string.helloworld);
     }
 }
